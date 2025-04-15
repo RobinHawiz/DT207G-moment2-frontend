@@ -10,10 +10,10 @@ export class WorkExperienceAPI {
 
   /**
    * Retrieves all work experience entities via GET /api/work-experience
-   * @returns A parsed WorkExperienceEntity object
+   * @returns A parsed array containing WorkExperienceEntity objects
    */
-  async getAll(): Promise<WorkExperienceEntity> {
-    const data = await fetchData<WorkExperienceEntity>(`${this.apiUrl}`);
+  async getAll(): Promise<Array<WorkExperienceEntity>> {
+    const data = await fetchData<Array<WorkExperienceEntity>>(`${this.apiUrl}`);
     return data;
   }
 
