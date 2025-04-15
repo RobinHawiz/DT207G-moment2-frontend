@@ -4,3 +4,19 @@ body {
   color: v.$light;
   background-color: v.$dark;
 }
+
+a {
+  color: v.$light;
+  text-decoration: none;
+  &:hover {
+    color: v.$dark;
+    background-color: v.$light;
+  }
+}
+
+header {
+  nav {
+    border-top: dashed 0.1rem v.$line-color;
+    border-bottom: dashed 0.1rem v.$line-color;
+  }
+}
