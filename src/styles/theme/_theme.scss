@@ -1,0 +1,6 @@
+@use "../abstracts/variables" as v;
+
+body {
+  color: v.$light;
+  background-color: v.$dark;
+}
