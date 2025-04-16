@@ -20,3 +20,11 @@ header {
     border-bottom: dashed 0.1rem v.$line-color;
   }
 }
+
+#homepage {
+  .work-experience-container {
+    article {
+      border-bottom: dashed 0.1rem v.$line-color;
+    }
+  }
+}
