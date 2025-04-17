@@ -1,7 +1,7 @@
 import { WorkExperienceAPI } from "@ts/workExperienceApi";
 import { ResponseError } from "@ts/types";
 import { isResponseError } from "@ts/utils/error";
-import { handleFormErrors } from "@ts/add/handleFormErrors";
+import { handleFormErrors } from "@ts/utils/error/handleFormErrors";
 import { createWorkExperiencePayload } from "@ts/createWorkExperiencePayload";
 import { clearFieldErrors } from "@ts/utils/dom";
 
