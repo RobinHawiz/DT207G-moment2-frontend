@@ -35,9 +35,11 @@ export function createWorkExperienceHtml(
 
     const editBtnElem = document.createElement("button");
     editBtnElem.innerText = "Edit";
+    editBtnElem.classList.add("edit");
 
     const deleteBtnElem = document.createElement("button");
     deleteBtnElem.innerText = "Delete";
+    deleteBtnElem.classList.add("delete");
 
     btnElemContainer.appendChild(editBtnElem);
     btnElemContainer.appendChild(deleteBtnElem);
