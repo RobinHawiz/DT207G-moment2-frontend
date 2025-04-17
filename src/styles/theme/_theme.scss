@@ -5,7 +5,14 @@ body {
   background-color: v.$dark;
 }
 
-a {
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+a,
+button {
   color: v.$light;
   text-decoration: none;
   &:hover {

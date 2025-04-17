@@ -1,7 +1,7 @@
 import { WorkExperienceEntity } from "@ts/types";
 
 /**
- * A DOM factory for rendering work experience entries.
+ * A DOM factory for rendering work experience entries, including an edit and delete button.
  *
  * @param entries - An array of work experience entries to render
  * @returns A DocumentFragment containing the rendered elements
@@ -30,11 +30,24 @@ export function createWorkExperienceHtml(
     const descriptionElem = document.createElement("p");
     descriptionElem.innerText = entry.description;
 
+    const btnElemContainer = document.createElement("div");
+    btnElemContainer.classList.add("button-container");
+
+    const editBtnElem = document.createElement("button");
+    editBtnElem.innerText = "Edit";
+
+    const deleteBtnElem = document.createElement("button");
+    deleteBtnElem.innerText = "Delete";
+
+    btnElemContainer.appendChild(editBtnElem);
+    btnElemContainer.appendChild(deleteBtnElem);
+
     articleElem.appendChild(jobTitleElem);
     articleElem.appendChild(companyNameElem);
     articleElem.appendChild(workCityLocationElem);
     articleElem.appendChild(workDateElem);
     articleElem.appendChild(descriptionElem);
+    articleElem.appendChild(btnElemContainer);
 
     fragment.appendChild(articleElem);
   });

@@ -33,6 +33,22 @@ p {
   margin: auto;
 }
 
+#homepage {
+  .work-experience-container {
+    article {
+      position: relative;
+    }
+    .button-container {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+    button:nth-child(1) {
+      margin-right: 1rem;
+    }
+  }
+}
+
 #add-page {
   form {
     width: 90%;
