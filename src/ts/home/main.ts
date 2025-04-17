@@ -1,5 +1,5 @@
 import "@styles/style.scss";
-import { displayWorkExperiences } from "@ts/displayWorkExperiences";
+import { displayWorkExperiences } from "@ts/home/displayWorkExperiences";
 
 async function main(): Promise<void> {
   displayWorkExperiences();

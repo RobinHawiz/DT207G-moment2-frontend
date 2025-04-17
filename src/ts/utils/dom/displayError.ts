@@ -15,5 +15,5 @@ export function displayError(elemToAppend: Element, message: string): void {
   const errorElem = document.createElement("p");
   errorElem.setAttribute("class", "error");
   errorElem.innerText = message;
-  elemToAppend.appendChild(errorElem);
+  elemToAppend.insertBefore(errorElem, elemToAppend.firstChild);
 }

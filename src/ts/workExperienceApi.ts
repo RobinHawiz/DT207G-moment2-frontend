@@ -1,5 +1,5 @@
 import { WorkExperienceEntity, WorkExperiencePayload } from "@ts/types";
-import { fetchData } from "@ts/utils/fetchData";
+import { fetchData } from "@ts/utils/api";
 
 /**
  * Provides methods to interact with the Work Experience API.

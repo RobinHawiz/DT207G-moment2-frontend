@@ -23,8 +23,31 @@ p {
   margin-bottom: 1.5rem;
 }
 
+.error {
+  padding: 0.5rem;
+}
+
 .body-content-container {
   width: 90%;
   max-width: 125rem;
   margin: auto;
+}
+
+#add-page {
+  form {
+    width: 90%;
+    max-width: 30rem;
+    margin-top: 2.2rem;
+    .input-box {
+      @include m.flex(normal, normal, column);
+      margin-bottom: 1rem;
+    }
+    label {
+      margin-bottom: 0.5rem;
+    }
+    input,
+    textarea {
+      padding: 0.5rem;
+    }
+  }
 }

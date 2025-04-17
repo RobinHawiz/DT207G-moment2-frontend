@@ -10,3 +10,12 @@ h1,
 h2 {
   font-size: v.$regular-font;
 }
+
+form {
+  input,
+  textarea,
+  button {
+    font-family: "Source Code Pro", monospace, sans-serif;
+    font-size: v.$regular-font;
+  }
+}

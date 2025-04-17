@@ -1,4 +1,4 @@
-import { isResponseError } from "./isResponseError";
+import { isResponseError } from "../error/isResponseError";
 
 /**
  * Sends an HTTP request and parses the JSON response body.
