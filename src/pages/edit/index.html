@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Makes the loading of google fonts non-render blocking -->
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+        rel="stylesheet"
+        type="text/css"
+      />
+    </noscript>
+    <link rel="icon" type="image/svg+xml" href="../vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DT207G-Moment 2</title>
+  </head>
+  <body>
+    <div class="body-content-container">
+      <header>
+        <nav>
+          <ul>
+            <li><a href="..">Home</a></li>
+            <li><a href="../add/">Add</a></li>
+            <li><a href="../about/">About</a></li>
+          </ul>
+        </nav>
+      </header>
+      <main id="edit-page">
+        <h1>Edit an existing work experience:</h1>
+        <form>
+          <div class="input-box">
+            <label for="jobTitle">Job title:</label>
+            <input type="text" id="jobTitle" name="jobTitle" />
+          </div>
+          <div class="input-box">
+            <label for="companyName">Company name:</label>
+            <input type="text" id="companyName" name="companyName" />
+          </div>
+          <div class="input-box">
+            <label for="workCityLocation">Work city location:</label>
+            <input type="text" id="workCityLocation" name="workCityLocation" />
+          </div>
+          <div class="input-box">
+            <label for="startDate">Start date:</label>
+            <input type="date" id="startDate" name="startDate" />
+          </div>
+          <div class="input-box">
+            <label for="endDate">End date:</label>
+            <input type="date" id="endDate" name="endDate" />
+          </div>
+          <div class="input-box">
+            <label for="description">Work description:</label>
+            <textarea
+              id="description"
+              name="description"
+              rows="5"
+              cols="33"
+            ></textarea>
+          </div>
+
+          <button type="submit">Submit</button>
+        </form>
+      </main>
+    </div>
+    <script type="module" defer>
+      import "@ts/edit/main.ts";
+    </script>
+  </body>
+</html>
