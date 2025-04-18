@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Makes the loading of google fonts non-render blocking -->
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+        rel="stylesheet"
+        type="text/css"
+      />
+    </noscript>
+    <link rel="icon" type="image/svg+xml" href="../vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DT207G-Moment 2</title>
+  </head>
+  <body>
+    <div class="body-content-container">
+      <header>
+        <nav>
+          <ul>
+            <li><a href="..">Home</a></li>
+            <li><a href="../add/">Add</a></li>
+            <li><a href=".">About</a></li>
+          </ul>
+        </nav>
+      </header>
+      <main id="about-page">
+        <h1>about:</h1>
+        <h2>Technical information</h2>
+        <p>
+          This web app lets you create, read, update and delete personal work
+          experiences. The frontend communicates with a backend server through
+          an API to perform these CRUD operations. The server uses a SQlite
+          database for persistance.
+        </p>
+        <h2>What I've learned</h2>
+        <p>
+          The main thing I learned was how to handle HTTP responses via the
+          Fetch API in a more thoughtful and reliable way. I used to just fetch
+          data, assume it would always be there, and wrap it in a try/catch out
+          of formality. I didn't really care. I just logged any errors that
+          occurred and let the app explode. But now my mindset shifted from not
+          caring, to actually thinking about what could go wrong and how to
+          handle errors without breaking the app.
+        </p>
+        <p>I do this by:</p>
+        <ul>
+          <li>
+            Sending meaningful, structured response errors from the backend.
+          </li>
+          <li>
+            Handling errors gracefully so the app doesn't crash unexpectedly.
+          </li>
+          <li>
+            Keeping both the user and the developer informed when something goes
+            wrong.
+          </li>
+        </ul>
+        <p>
+          This ensures the app works not just when everything's fine, but also
+          when the servers are down or something unexpected happens.
+        </p>
+        <p>This is my redemption arc.</p>
+        <p>
+          I also learned how to modularize my projects better by separating
+          concerns between files and functions to build a cleaner, more
+          maintainable codebase.
+        </p>
+        <p>
+          I didn't focus much on API communication itself, since I covered that
+          in the previous assignment. But this time, I improved on it by using
+          actual RESTful endpoints instead of routes like /insert or /delete.
+        </p>
+      </main>
+    </div>
+    <script type="module">
+      import "@ts/about/main.ts";
+    </script>
+    <script
+      src="https://kit.fontawesome.com/2f4373d7bc.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

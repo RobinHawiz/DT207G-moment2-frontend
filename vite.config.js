@@ -22,6 +22,7 @@ export default defineConfig(({ mode }) => {
         input: {
           main: resolve(__dirname, root, "index.html"),
           add: resolve(__dirname, root, "add", "index.html"),
+          about: resolve(__dirname, root, "about", "index.html"),
           edit: resolve(__dirname, root, "edit", "index.html"),
         },
         output: {
