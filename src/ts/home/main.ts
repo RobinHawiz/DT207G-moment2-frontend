@@ -9,9 +9,10 @@ async function main(): Promise<void> {
   if (!entries) {
     return;
   }
-  displayWorkExperiences(entries);
-  initWorkExperienceEditBtn(entries);
-  initWorkExperienceDeleteBtn(entries);
+  if (displayWorkExperiences(entries)) {
+    initWorkExperienceEditBtn(entries);
+    initWorkExperienceDeleteBtn(entries);
+  }
 }
 
 main();
