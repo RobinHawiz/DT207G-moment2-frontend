@@ -1,3 +1,4 @@
+import { Button } from "@ts/utils/ui";
 import { ResponseError, WorkExperienceEntity } from "@ts/types";
 import { handleGlobalError, isResponseError } from "@ts/utils/error";
 import { WorkExperienceAPI } from "@ts/workExperienceApi";
@@ -31,26 +32,34 @@ export function initWorkExperienceDeleteBtn(
 
     for (const entry of entries) {
       if (String(entry.id) === articleElem.dataset.id) {
-        btn.addEventListener("click", () => handleClickEvent(entry.id));
+        btn.addEventListener("click", () =>
+          handleClickEvent(entry.id, btn as HTMLButtonElement)
+        );
         break;
       }
     }
   });
 }
 
-async function handleClickEvent(entryId: number) {
+async function handleClickEvent(entryId: number, btnElem: HTMLButtonElement) {
   const api = new WorkExperienceAPI(
     "https://dt207g-moment2.azurewebsites.net/api/work-experience"
   );
 
+  const btn = new Button(btnElem);
+
   try {
     const isUserSure = window.confirm("Are you sure?");
     if (isUserSure) {
+      btn.disable();
+      btn.showLoader();
       await api.delete(entryId);
       window.alert("Work experience has been deleted!");
       window.location.reload();
     }
   } catch (error) {
+    btn.enable();
+    btn.showLoader();
     if (Array.isArray(error) && error.every((err) => isResponseError(err))) {
       const resError = error as Array<ResponseError>;
       for (const err of resError) {

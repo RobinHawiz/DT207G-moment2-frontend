@@ -5,6 +5,7 @@ import { handleFormErrors } from "@ts/utils/error/handleFormErrors";
 import { createWorkExperiencePayload } from "@ts/createWorkExperiencePayload";
 import { clearFieldErrors } from "@ts/utils/dom";
 import { populateFormFields } from "./populateFormFields";
+import { Button } from "@ts/utils/ui";
 
 /**
  * Initializes the edit form by populating it with entry data and attaching a submit handler.
@@ -34,16 +35,25 @@ export function initWorkExperienceForm(entry: WorkExperienceEntity): void {
  */
 async function handleFormSubmit(e: Event, entryId: number): Promise<void> {
   e.preventDefault();
-  console.log("Edit form");
   const form = e.target as HTMLFormElement;
   const formData = new FormData(form);
   const payload = createWorkExperiencePayload(formData);
+  const submitBtnElem = document.querySelector(`button[type="submit"]`);
+
+  if (!submitBtnElem) {
+    return;
+  }
+
+  const btn = new Button(submitBtnElem as HTMLButtonElement);
 
   try {
     const api = new WorkExperienceAPI(
       "https://dt207g-moment2.azurewebsites.net/api/work-experience"
     );
+    btn.disable();
+    btn.showLoader();
     await api.update(entryId, payload);
+    btn.hideLoader();
     const inputElems: NodeListOf<HTMLInputElement> = document.querySelectorAll(
       "form input, form textarea"
     );
@@ -52,8 +62,11 @@ async function handleFormSubmit(e: Event, entryId: number): Promise<void> {
     setTimeout(() => {
       window.alert("Work experience has been updated!");
       window.location.href = "/DT207G-moment2-frontend/";
-    }, 0);
+    }, 1);
   } catch (error) {
+    btn.enable();
+    btn.hideLoader();
+    console.log(error);
     if (Array.isArray(error) && error.every((err) => isResponseError(err))) {
       const resError = error as Array<ResponseError>;
       handleFormErrors(resError);

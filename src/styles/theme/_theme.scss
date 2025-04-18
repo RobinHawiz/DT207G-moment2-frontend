@@ -38,6 +38,17 @@ header {
     article {
       border-bottom: dashed 0.1rem v.$line-color;
     }
+    button.edit,
+    button.delete {
+      &.loading {
+        cursor: default;
+        &:hover {
+          background: inherit;
+          border: inherit;
+          color: inherit;
+        }
+      }
+    }
   }
 }
 
@@ -58,6 +69,14 @@ header {
       &:hover {
         background-color: v.$light;
         color: v.$dark;
+      }
+      &.loading {
+        cursor: default;
+        &:hover {
+          background: inherit;
+          border: inherit;
+          color: inherit;
+        }
       }
     }
   }

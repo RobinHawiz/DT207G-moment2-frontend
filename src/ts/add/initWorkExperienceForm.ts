@@ -4,6 +4,7 @@ import { isResponseError } from "@ts/utils/error";
 import { handleFormErrors } from "@ts/utils/error/handleFormErrors";
 import { createWorkExperiencePayload } from "@ts/createWorkExperiencePayload";
 import { clearFieldErrors } from "@ts/utils/dom";
+import { Button } from "@ts/utils/ui";
 
 /**
  * Initializes the add page form by attaching a submit handler.
@@ -33,19 +34,34 @@ async function handleFormSubmit(e: Event): Promise<void> {
   const form = e.target as HTMLFormElement;
   const formData = new FormData(form);
   const payload = createWorkExperiencePayload(formData);
+  const submitBtnElem = document.querySelector(`button[type="submit"]`);
+
+  if (!submitBtnElem) {
+    return;
+  }
+
+  const btn = new Button(submitBtnElem as HTMLButtonElement);
 
   try {
     const api = new WorkExperienceAPI(
       "https://dt207g-moment2.azurewebsites.net/api/work-experience"
     );
+    btn.disable();
+    btn.showLoader();
     await api.insert(payload);
+    btn.enable();
+    btn.hideLoader();
     const inputElems: NodeListOf<HTMLInputElement> = document.querySelectorAll(
       "form input, form textarea"
     );
     clearFieldErrors(inputElems);
     // Defer the alert to ensure DOM updates from clearFieldErrors are applied before blocking the UI
-    setTimeout(() => window.alert("Work experience has been added!"), 0);
+    setTimeout(() => {
+      window.alert("Work experience has been added!");
+    }, 1);
   } catch (error) {
+    btn.enable();
+    btn.hideLoader();
     if (Array.isArray(error) && error.every((err) => isResponseError(err))) {
       const resError = error as Array<ResponseError>;
       handleFormErrors(resError);
