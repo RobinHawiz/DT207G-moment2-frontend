@@ -36,7 +36,7 @@ async function handleFormSubmit(e: Event): Promise<void> {
 
   try {
     const api = new WorkExperienceAPI(
-      "http://localhost:4000/api/work-experience"
+      "https://dt207g-moment2.azurewebsites.net/api/work-experience"
     );
     await api.insert(payload);
     const inputElems: NodeListOf<HTMLInputElement> = document.querySelectorAll(
