@@ -1,8 +1,7 @@
-import { WorkExperienceAPI } from "@ts/workExperienceApi";
+import { WorkExperienceAPI } from "@ts/utils/api";
 import { ResponseError, WorkExperienceEntity } from "@ts/types";
-import { isResponseError } from "@ts/utils/error";
-import { handleFormErrors } from "@ts/utils/error/handleFormErrors";
-import { createWorkExperiencePayload } from "@ts/createWorkExperiencePayload";
+import { isResponseError, handleFormErrors } from "@ts/utils/error";
+import { createWorkExperiencePayload } from "@ts/utils/dom";
 import { clearFieldErrors } from "@ts/utils/dom";
 import { populateFormFields } from "./populateFormFields";
 import { Button } from "@ts/utils/ui";

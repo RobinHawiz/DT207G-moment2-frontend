@@ -1,7 +1,7 @@
 import { Button } from "@ts/utils/ui";
 import { ResponseError, WorkExperienceEntity } from "@ts/types";
 import { handleGlobalError, isResponseError } from "@ts/utils/error";
-import { WorkExperienceAPI } from "@ts/workExperienceApi";
+import { WorkExperienceAPI } from "@ts/utils/api";
 
 /**
  * Initializes a click handlers for all delete buttons, assosiating each button with its corresponding work experience entry.

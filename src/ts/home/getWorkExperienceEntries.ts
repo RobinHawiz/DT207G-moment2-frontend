@@ -1,4 +1,4 @@
-import { WorkExperienceAPI } from "@ts/workExperienceApi";
+import { WorkExperienceAPI } from "@ts/utils/api";
 import { ResponseError, WorkExperienceEntity } from "@ts/types";
 import { isResponseError, handleGlobalError } from "@ts/utils/error";
 
