@@ -25,7 +25,10 @@ export function createWorkExperienceHtml(
     workCityLocationElem.innerText = entry.workCityLocation;
 
     const workDateElem = document.createElement("p");
-    workDateElem.innerText = String(entry.startDate + " ⎯ " + entry.endDate);
+    workDateElem.innerText =
+      entry.startDate.toISOString().split("T")[0] +
+      " ⎯ " +
+      entry.endDate.toISOString().split("T")[0];
 
     const descriptionElem = document.createElement("p");
     descriptionElem.innerText = entry.description;

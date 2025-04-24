@@ -20,6 +20,10 @@ export function populateFormFields(
       continue;
     }
 
-    inputElem.value = String(value);
+    if (key === "startDate" || key === "endDate") {
+      inputElem.value = new Date(value).toISOString().split("T")[0];
+    } else {
+      inputElem.value = String(value);
+    }
   }
 }

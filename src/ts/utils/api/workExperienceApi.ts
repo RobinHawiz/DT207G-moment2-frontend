@@ -13,8 +13,15 @@ export class WorkExperienceAPI {
    * @returns A parsed array containing WorkExperienceEntity objects
    */
   async getAll(): Promise<Array<WorkExperienceEntity>> {
-    const data = await fetchData<Array<WorkExperienceEntity>>(`${this.apiUrl}`);
-    return data;
+    const entities = await fetchData<Array<WorkExperienceEntity>>(
+      `${this.apiUrl}`
+    );
+    const output: Array<WorkExperienceEntity> = entities.map((entity) => ({
+      ...entity,
+      startDate: new Date(entity.startDate),
+      endDate: new Date(entity.endDate),
+    }));
+    return output;
   }
 
   /**
