@@ -38,7 +38,7 @@ export class WorkExperienceAPI {
    * @param id - The ID of the entry to update
    * @param payload - The updated work experience data
    */
-  async update(id: number, payload: WorkExperiencePayload): Promise<void> {
+  async update(id: string, payload: WorkExperiencePayload): Promise<void> {
     const options: RequestInit = {
       method: "PUT",
       headers: {
@@ -54,7 +54,7 @@ export class WorkExperienceAPI {
    * Deletes a specific work experience entry via DELETE /api/work-experience/:id.
    * @param id - The ID of the entry to delete
    */
-  async delete(id: number): Promise<void> {
+  async delete(id: string): Promise<void> {
     const options: RequestInit = {
       method: "DELETE",
     };

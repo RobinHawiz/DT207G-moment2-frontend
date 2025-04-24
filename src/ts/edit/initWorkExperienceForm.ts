@@ -32,7 +32,7 @@ export function initWorkExperienceForm(entry: WorkExperienceEntity): void {
  * @param e - The form submission event
  * @param entryId - The ID of the work experience entry being updated
  */
-async function handleFormSubmit(e: Event, entryId: number): Promise<void> {
+async function handleFormSubmit(e: Event, entryId: string): Promise<void> {
   e.preventDefault();
   const form = e.target as HTMLFormElement;
   const formData = new FormData(form);

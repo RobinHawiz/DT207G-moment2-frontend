@@ -31,7 +31,7 @@ export function initWorkExperienceDeleteBtn(
     }
 
     for (const entry of entries) {
-      if (String(entry.id) === articleElem.dataset.id) {
+      if (entry.id === articleElem.dataset.id) {
         btn.addEventListener("click", () =>
           handleClickEvent(entry.id, btn as HTMLButtonElement)
         );
@@ -41,7 +41,7 @@ export function initWorkExperienceDeleteBtn(
   });
 }
 
-async function handleClickEvent(entryId: number, btnElem: HTMLButtonElement) {
+async function handleClickEvent(entryId: string, btnElem: HTMLButtonElement) {
   const api = new WorkExperienceAPI(
     "https://dt207g-moment2.azurewebsites.net/api/work-experience"
   );
